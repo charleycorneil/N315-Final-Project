@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login / Signup</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-top">
+        <div class="logo">
+          <a href="index.html">
+            <img src="/dist/images/Keurig-logo.png" alt="Keurig Logo" />
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="login-page">
+      <div class="login-left">
+        <h1>Sign In</h1>
+        <form id="login-form">
+          <div class="form-group">
+            <input
+              type="email"
+              id="login-email"
+              placeholder="Enter email address"
+              required
+            />
+          </div>
+          <button type="submit" class="login-btn">CONTINUE</button>
+        </form>
+        <p class="create-account">
+          Don’t have an account?
+          <a href="#" id="show-signup">Create an account</a>
+        </p>
+      </div>
+
+      <div class="login-right">
+        <img src="/dist/images/perks.png" alt="" />
+      </div>
+    </div>
+
+    <div id="logout-container" style="display: none">
+      <button id="logout-button">Logout</button>
+    </div>
+
+    <footer class="login-footer">
+      <div class="login-footer-bottom">
+        <p>
+          © 2024 Keurig Green Mountain, Inc. All Rights Reserved
+          <a href="#">Terms of Use</a> • <a href="#">Privacy Policy</a> •
+          <a href="#">Modern Slavery Act</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/dist/app/app.js"></script>
+  </body>
+</html>

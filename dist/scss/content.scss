@@ -7,8 +7,8 @@
 /* Four connected areas */
 .connected-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Four equal columns */
-  background-color: #483036; /* Dark background color */
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #483036;
   color: #fff;
   text-align: center;
   font-family: "RockfordSans-Light";

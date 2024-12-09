@@ -27,7 +27,7 @@
   },
   "scripts": {
     "serve": "live-server dist",
-    "compile-sass": "sass scss/styles.scss css/styles.css -w --no-source-map",
+    "compile-sass": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map",
     "build-webpack": "webpack"
   },
   "keywords": [],

@@ -4,7 +4,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin: 40px auto;
-  max-width: 1660px;
+  max-width: 1230px;
   padding: 20px;
 }
 
@@ -28,13 +28,13 @@
 }
 
 .product h3 {
-  font-size: 20px;
+  font-size: 15px;
   margin: 10px 0;
 }
 
 .price {
-  font-family: "SantralMudium";
-  font-size: 20px;
+  font-family: "SantralSemiBold";
+  font-size: 15px;
 }
 
 .current-price {
@@ -136,12 +136,12 @@
 .product-badge {
   background-color: #3f99ae;
   color: #fff;
-  font-size: 14px;
+  font-size: 9px;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 4px;
   margin-bottom: 30px;
-  margin-top: -20px;
+  margin-top: -10px;
   margin-left: -15px;
   display: inline-block;
   font-family: "SantralMedium";
@@ -182,32 +182,32 @@
 
 .price-sale {
   color: red;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   display: block;
-  font-family: "SantralMedium";
+  font-family: "SantralSemiBold";
 }
 
 .price-original {
   text-decoration: line-through;
   color: #888;
-  font-size: 14px;
+  font-size: 11px;
   font-family: "SantralMedium";
 }
 
 .price-description {
-  font-size: 17px;
+  font-size: 10px;
   color: #0d0d0d;
-  font-family: "SantralMedium";
-  margin-left: 60px;
+  font-family: "SantralSemiBold";
+  margin-left: 25px;
 }
 
 .price-final {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 5px;
   display: block;
-  font-family: "SantralMedium";
+  font-family: "SantralSemiBold";
 }
 
 .coupon {
@@ -222,21 +222,21 @@
   color: #fff;
   padding: 6px 8px;
   border-radius: 0 10px 0 10px;
-  font-size: 15px;
+  font-size: 10px;
   margin-right: 5px;
 }
 
 .coupon-label {
-  font-size: 17px;
+  font-size: 12px;
   font-family: "SantralSemiBold";
   color: #562828;
 }
 
 .coupon-description {
-  font-size: 12px;
+  font-size: 8px;
   color: #562828;
   display: block;
-  margin-left: 82px;
+  margin-left: 50px;
   font-family: "SantralSemiBold";
 }
 
@@ -273,8 +273,8 @@
 .shipping-icon {
   margin-top: 13px;
   margin-right: 6px;
-  width: 35px;
-  height: 15px;
+  width: 27px;
+  height: 8px;
 }
 
 .product-actions {
