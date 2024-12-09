@@ -1,0 +1,110 @@
+/* Dropdown Section */
+.dropdown-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 20px 0;
+  font-family: "RockfordSans-Light", sans-serif;
+  height: auto;
+}
+
+/* Left Dropdowns */
+.left-dropdowns {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "SantralMedium";
+  font-size: 50px;
+  width: fit-content;
+  align-items: center;
+}
+
+.dropdown select {
+  padding: 20px 22px;
+  border: 3px solid #a5a5a5;
+  border-radius: 4px;
+  font-size: 18px;
+  background: #fff url("/images/down-arrow.png") no-repeat right 10px center;
+  background-size: 20px;
+  appearance: none;
+  cursor: pointer;
+  height: 70px;
+  margin-left: 20px;
+  font-family: "SantralMedium";
+  min-width: 170px;
+  width: fit-content;
+}
+
+.dropdown select:hover {
+  border-color: #555;
+}
+
+.dropdown select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Right Dropdown */
+.right-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right-dropdown label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+  margin-right: 215px;
+}
+
+.right-dropdown span {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+  margin-right: 25px;
+}
+
+.right-dropdown select {
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  background: none;
+  background-image: url("/images/down-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+  appearance: none;
+  width: auto;
+  margin-right: 20px;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sort-container img.arrow-icon {
+  margin-left: 8px;
+  width: 23px;
+  height: 23px;
+  margin-right: 22px;
+}
+
+/* Toggle Up Arrow for Open Dropdowns */
+.toggle-arrow[data-open="true"] {
+  background-image: url("/images/up-arrow.png");
+}
