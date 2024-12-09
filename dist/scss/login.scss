@@ -27,11 +27,11 @@
 .nav {
   .nav-top {
     display: flex;
-    justify-content: center; /* Center the logo */
+    justify-content: center;
     padding: 20px 0;
 
     .logo img {
-      max-height: 40px;
+      max-height: 30px;
       cursor: pointer;
     }
   }
@@ -64,13 +64,10 @@
   text-align: left;
 }
 
-// .form-group input {
-//   width: 100%;
-//   padding: 10px;
-//   font-size: 16px;
-//   border: 1px solid #ddd;
-//   border-radius: 4px;
-// }
+.form-group input {
+  margin-bottom: 15px;
+  text-align: left;
+}
 
 #login-email {
   border-radius: 50px;
@@ -97,6 +94,10 @@
   height: 70px;
   margin-top: -30px;
 }
+
+// .create-account a {
+//   margin-left: 200px;
+// }
 
 .login-btn,
 .signup-btn {
@@ -142,11 +143,11 @@
   border-top: 1px solid rgb(171, 171, 171);
   background-color: #fff;
   color: #000;
-  font-size: 15px;
-  margin-bottom: 200px;
+  font-size: 12px;
+  // margin-bottom: 200px;
   margin-top: -150px;
   font-family: "Santral-Light";
-  width: 2300px;
+  width: 1720px;
   align-items: center;
   margin-left: -40px;
 }
@@ -157,7 +158,7 @@
   margin-bottom: 50px;
   font-family: "Santral-LightItalic";
   font-weight: 500;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .login-footer-bottom a {
@@ -182,23 +183,30 @@
     padding-right: 50px;
 
     h1 {
-      font-size: 30px;
-      margin-bottom: 90px;
+      font-size: 20px;
+      margin-bottom: 40px;
       color: #af7c52;
       text-align: center;
       font-family: "SantralMedium";
+      margin-left: 300px;
     }
 
     form {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      width: 350px;
+      margin-left: 250px;
+      height: 150px;
 
-      input {
+      .form-group input {
         padding: 10px;
         font-size: 1rem;
-        border: 3px solid #483036;
+        border: 1px solid #483036;
         border-radius: 5px;
+        width: 350px;
+        height: 150px;
+        margin-bottom: 30px;
       }
 
       .login-btn {
@@ -218,9 +226,9 @@
 
     .create-account {
       margin-top: 15px;
-      font-size: 18px;
+      font-size: 13px;
       font-family: "Santral-Light";
-      margin-left: 10px;
+      margin-left: 250px;
 
       a {
         color: #000000;
@@ -242,18 +250,19 @@
 
     img {
       width: auto;
-      height: 600px;
+      height: 450px;
       margin-bottom: 150px;
       margin-top: 45px;
     }
   }
 }
+
 .input-rounded {
   border-radius: 50px;
   border: 1px solid #ccc;
   padding: 10px 20px;
   font-size: 16px;
-  width: 100%;
+  width: 20px;
   margin-bottom: 10px;
 }
 
@@ -265,7 +274,7 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
-  width: 100%;
+  width: 20px;
 }
 
 .continue-btn:hover {
