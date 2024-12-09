@@ -18,149 +18,72 @@ function changeRoute() {
   }
 }
 
-// function initURLListener() {
-//   $(window).on("hashchange", changeRoute);
-//   changeRoute();
-// }
+import { auth } from "./firebaseConfig";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-// $(document).ready(function () {
-//   initURLListener();
-// });
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const loginForm = document.getElementById("login-form");
-//   const signupForm = document.getElementById("signup-form");
-//   const showSignupLink = document.getElementById("show-signup");
-//   const showLoginLink = document.getElementById("show-login");
-//   const formWrappers = document.querySelectorAll(".form-wrapper");
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-//   showSignupLink.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     formWrappers[0].classList.add("hidden");
-//     formWrappers[1].classList.remove("hidden");
-//   });
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    alert("Successfully Signed In");
+    window.location.href = "index.html"; // Redirect to the homepage
+  } catch (error) {
+    alert("Login failed: " + error.message);
+  }
+});
 
-//   showLoginLink.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     formWrappers[1].classList.add("hidden");
-//     formWrappers[0].classList.remove("hidden");
-//   });
+const logoutButton = document.getElementById("logout-button");
 
-//   // Handle form submissions (example)
-//   loginForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     console.log("Logging in with", {
-//       email: document.getElementById("login-email").value,
-//       password: document.getElementById("login-password").value,
-//     });
-//     alert("Login successful! Redirecting to the homepage...");
-//     window.location.href = "index.html"; // Redirect to homepage
-//   });
-
-//   signupForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     console.log("Signing up with", {
-//       email: document.getElementById("signup-email").value,
-//       password: document.getElementById("signup-password").value,
-//       confirmPassword: document.getElementById("confirm-password").value,
-//     });
-//     alert("Signup successful! Redirecting to login...");
-//     formWrappers[1].classList.add("hidden");
-//     formWrappers[0].classList.remove("hidden");
-//   });
-// });
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const loginForm = document.querySelector("#login-form");
-//   const logoutBtn = document.querySelector("#logout-btn");
-//   const accountButton = document.querySelector("#account-button"); // Update selector if needed
-
-//   // Simulated user session
-//   let isLoggedIn = false;
-
-//   // Login form submission
-//   if (loginForm) {
-//     loginForm.addEventListener("submit", (e) => {
-//       e.preventDefault();
-//       isLoggedIn = true;
-//       updateUI();
-//     });
-//   }
-
-//   // Logout button functionality
-//   if (logoutBtn) {
-//     logoutBtn.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       isLoggedIn = false;
-//       updateUI();
-//     });
-//   }
-
-//   // Update UI based on login state
-//   function updateUI() {
-//     if (isLoggedIn) {
-//       logoutBtn.style.display = "inline"; // Show logout button
-//       accountButton.style.display = "none"; // Hide account button
-//     } else {
-//       logoutBtn.style.display = "none"; // Hide logout button
-//       accountButton.style.display = "inline"; // Show account button
-//     }
-//   }
-
-//   // Initialize UI
-//   updateUI();
-// });
-
-import "../css/styles.css";
+if (logoutButton) {
+  logoutButton.addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      alert("Successfully Logged Out");
+      window.location.href = "login.html"; // Redirect to the login page
+    } catch (error) {
+      alert("Logout failed: " + error.message);
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  const continueButton = document.getElementById("continue-button");
-  const additionalInputContainer = document.getElementById(
-    "additional-input-container"
-  );
-  const signInButton = document.getElementById("sign-in-button");
-  const logoutButton = document.getElementById("logout-btn");
-  const accountButton = document.getElementById("account-button");
+  let cart = []; // To store cart items
+  const cartCountElement = document.querySelector(".cart-count"); // Cart count display
 
-  // First Continue Button Click
-  continueButton.addEventListener("click", () => {
-    const emailInput = document.getElementById("email-input").value.trim();
+  // Add event listeners to all "Buy Now" buttons
+  const buyNowButtons = document.querySelectorAll(".buy-now");
+  buyNowButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const product = {
+        id: index, // Unique identifier for the product
+        name: button.closest(".product").querySelector("h3").innerText,
+        price: button.closest(".product").querySelector(".current-price")
+          .innerText,
+      };
 
-    if (emailInput === "") {
-      alert("Please enter your email address.");
-      return;
+      // Add the product to the cart
+      cart.push(product);
+
+      // Update the cart count
+      updateCartCount();
+
+      // Display a success message
+      alert(`Added "${product.name}" to the cart!`);
+    });
+  });
+
+  // Function to update the cart count
+  function updateCartCount() {
+    if (cartCountElement) {
+      cartCountElement.innerText = cart.length;
     }
-
-    additionalInputContainer.style.display = "block"; // Show the password input area
-    continueButton.style.display = "none"; // Hide the first continue button
-  });
-
-  // Second Continue Button Click
-  signInButton.addEventListener("click", () => {
-    const passwordInput = document
-      .getElementById("password-input")
-      .value.trim();
-
-    if (passwordInput === "") {
-      alert("Please enter your password.");
-      return;
-    }
-
-    alert("Successfully Signed In!");
-
-    // Update navigation to show Logout
-    accountButton.style.display = "none";
-    logoutButton.style.display = "block";
-  });
-
-  // Logout Button Click
-  logoutButton.addEventListener("click", () => {
-    alert("Successfully Logged Out!");
-
-    // Reset to default state
-    accountButton.style.display = "block";
-    logoutButton.style.display = "none";
-    continueButton.style.display = "block";
-    additionalInputContainer.style.display = "none";
-  });
+  }
 });
