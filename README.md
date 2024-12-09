@@ -1,8 +1,8 @@
 ## N315 Final Project
 
-Web4: https://in-info-web4.luddy.indianapolis.iu.edu/~chelcorn/homework%208/
+Web4:
 
-Github: https://github.com/charleycorneil/homework-8
+Github:
 
 ### Overview
 
